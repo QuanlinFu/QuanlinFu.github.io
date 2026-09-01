@@ -15,4 +15,5 @@ title: "About Quanlin Fu"
 
 ## Press
 
-
+QuanlinFu.github.io/assets
+/QuanlinFu_pic.jpg
