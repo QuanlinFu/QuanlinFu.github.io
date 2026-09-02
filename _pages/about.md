@@ -1,5 +1,8 @@
 ---
-title: About Quanlin Fu
+title: "About Quanlin Fu"
+layout: single
+permalink: /about/
+author_profile: true
 ---
 
 ## Education 
