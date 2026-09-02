@@ -24,4 +24,4 @@ Tools and technologies I use for designing, prototyping, and building physical p
 
 ## Press
 
-QuanlinFu.github.io/assets/QuanlinFu_pic.jpg
+assets/images/QuanlinFu_pic.jpg
