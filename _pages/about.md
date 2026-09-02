@@ -1,21 +1,23 @@
 ---
-
-title: "About Quanlin Fu"
-
+title: About Quanlin Fu
 ---
 
 ## Education
 
-* Vanderbilt University
-  * BS Mechanical Engineering
-  * BS Mathematics
-  * BS Minor in Digital Fabrication
+A brief look at my academic background in engineering and math, with a focus on hands-on design and fabrication.
 
- ## Technical skills
+- Vanderbilt University
+  - BS Mechanical Engineering
+  - BS Mathematics
+  - BS Minor in Digital Fabrication
 
-* CAD(SolidWorks, Fusion, AutoCAD)
-* 3D Printing
-* Engineering tools
+## Technical skills
+
+Tools and technologies I use for designing, prototyping, and building physical projects.
+
+- CAD(SolidWorks, Fusion, AutoCAD)
+- 3D Printing
+- Engineering tools
 
 ## Press
 
