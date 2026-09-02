@@ -104,7 +104,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "name"
+  name             : "Quanlin Fu"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Mechanial Engineering Junior student in Vanderbilt University"
   location         : "Nashville, TN"
