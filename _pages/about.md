@@ -2,7 +2,7 @@
 title: About Quanlin Fu
 ---
 
-## Education
+## Education 
 
 A brief look at my academic background in engineering and math, with a focus on hands-on design and fabrication.
 
