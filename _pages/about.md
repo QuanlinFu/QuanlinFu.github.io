@@ -22,6 +22,4 @@ Tools and technologies I use for designing, prototyping, and building physical p
 - 3D Printing
 - Engineering tools
 
-## Press
 
-assets/images/QuanlinFu_pic.jpg
