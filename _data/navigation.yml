@@ -1,10 +1,9 @@
 # main links
 main:
   - title: "Portfolio"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+    url: /portfolio/
   - title: "About"
-    url: QuanlinFu.github.io/_pages/about.md
-
+    url: /about/
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
