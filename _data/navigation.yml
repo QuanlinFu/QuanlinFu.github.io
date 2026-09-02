@@ -3,7 +3,8 @@ main:
   - title: "Portfolio"
     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "About"
-    url: _pages/about.md
+    url: QuanlinFu.github.io/_pages/about.md
+
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
