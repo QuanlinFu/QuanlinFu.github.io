@@ -74,7 +74,7 @@ The current photographs document the resulting prototype from three angles. They
 
 ### Which materials work together?
 
-PLA with TPU, or PETG with TPU, are candidate rigid–flexible combinations: one material provides structure and the other provides compliance. That functional pairing does not guarantee a strong bond or an easy print. Prusa's guide discusses these combinations and interface design, while [UltiMaker's TPU 95A guidance](https://support.ultimaker.com/s/article/1667337612195) classifies its mixed-material combinations as experimental and points to interlocking as a way to improve bonding. Printer capability, compatible process conditions, and interface testing all matter. This prototype uses TPU at the center; its exact grade or hardness has not yet been recorded.
+PLA with TPU, or PETG with TPU, are candidate rigid–flexible combinations: one material provides structure and the other provides compliance. That functional pairing does not guarantee a strong bond or an easy print. Prusa's guide discusses these combinations and interface design, while [UltiMaker's TPU 95A guidance](https://support.ultimaker.com/s/article/1667337612195) classifies its mixed-material combinations as experimental and points to interlocking as a way to improve bonding. Printer capability, compatible process conditions, and interface testing all matter. This prototype uses white TPU 95A at the center, as confirmed by the author. The 95A designation describes Shore hardness; spring geometry, wall count, and infill also affect how the printed element flexes.
 
 ## Dimensions & print record {#print-record}
 
@@ -88,7 +88,7 @@ PLA with TPU, or PETG with TPU, are candidate rigid–flexible combinations: one
 | Return mechanism | Circular TPU spring; automatic reopening confirmed in the author's functional check |
 | Jaw length | 35 mm (3.5 cm) |
 | Maximum jaw opening / capacity | 20 mm (2 cm) |
-| STL units / scale | Not encoded in STL; CAD export units need confirmation |
+| STL units / scale | STL is unitless; match the CAD export units on import and check the jaw against the reported 35 mm length before slicing |
 | Available geometry | Original Autodesk Fusion CAD share and downloadable STL |
 
 </div>
@@ -97,22 +97,43 @@ The 35 mm jaw length and 20 mm maximum opening are the dimensions reported for t
 
 ### Print settings
 
-<div class="pliers-table-wrap" tabindex="0" role="region" aria-label="Print settings awaiting the actual slicer record" markdown="1">
+**Prototype record.** The build used black PLA for the rigid parts, white TPU **95A** for the spring, a Voron printer, and SuperSlicer. The reported infill setting was **31%**, and the photographs show triangular infill in the rigid parts. The author recalls using a default layer-height profile and possibly a **0.4 mm nozzle**, but the saved slicer project and G-code are not available to verify those details. The TPU brand and its individual infill setting cannot be recovered from the photographs.
 
-| Setting | Rigid parts | Central element |
+### Reference settings for a repeat print
+
+<aside class="pliers-note"><strong>Researched starting settings.</strong> The values below form a proposed setup for a new print. They combine the linked Voron profile and manufacturer guidance with the design choices described below; they are not a recovered log of the original build or a tested reproduction profile.</aside>
+
+<div class="pliers-table-wrap" tabindex="0" role="region" aria-label="Reference print settings for PLA and TPU 95A" markdown="1">
+
+| Setting | Rigid parts — PLA | Circular spring — TPU 95A |
 | :--- | :--- | :--- |
-| Filament / material grade | Black PLA | White TPU; grade / hardness unrecorded |
-| Printer and slicer | Voron / SuperSlicer | Voron / SuperSlicer |
-| Layer height | SuperSlicer profile default; exact value unrecorded | SuperSlicer profile default; exact value unrecorded |
-| Nozzle diameter | Not recorded yet | Not recorded yet |
-| Nozzle / bed temperature | Not recorded yet | Not recorded yet |
-| Infill pattern / percentage | 31% reported; triangular pattern visible | 31% reported for the project; per-part setting unconfirmed |
-| Walls / top and bottom layers | Not recorded yet | Not recorded yet |
-| Print speed / supports / orientation | Not recorded yet | Not recorded yet |
+| Material | Black PLA | White TPU 95A; use the chosen brand's filament profile |
+| Printer / slicer | Voron / SuperSlicer | Voron / SuperSlicer |
+| Nozzle diameter | 0.4 mm reference nozzle | 0.4 mm reference nozzle |
+| Layer height | 0.15 mm; 0.20 mm first layer [1] | 0.15 mm; 0.20 mm first layer, adopted as a starting geometry setting [1] |
+| Nozzle temperature | 215 °C first layer; 210 °C thereafter [2] | Start at 230 °C; Prusament TPU 95A lists 220–240 °C [3] |
+| Bed temperature | 60 °C [2] | Start at 60 °C; Prusament TPU 95A lists 55–75 °C [3] |
+| Infill | 31%, triangles, following the project record and visible pattern | 31%, triangles, proposed for the first trial; tune for spring response |
+| Walls / perimeters | 3 [1] | 3 as an initial trial [1] |
+| Top / bottom solid layers | 0 top / 6 bottom for the exposed-infill variant | 7 top / 6 bottom as an initial trial [1] |
+| Print speed | Proposed cap of 40 mm/s for perimeters and infill; 20 mm/s first layer | Start at 20 mm/s, including the first layer [4] |
+| Supports | Start disabled; inspect every layer around the interlocks before printing | Start disabled; inspect the spring and connection features before printing |
+| Orientation | Proposed: broad handle and jaw faces flat on the bed | Proposed: circular spring plane parallel to the bed |
 
 </div>
 
-The table records the settings that can currently be confirmed. Layer height depends on the selected nozzle and print profile: the [upstream Voron profile library](https://github.com/slic3r/slic3r-profiles/blob/ca25c7ec55dcc6073da61e39692c321cdb6497dc/Voron.ini#L149) specifies a 0.15 mm default for a 0.4 mm nozzle, while other nozzle presets differ. This is a reference, not a recovered setting for this print. The original SuperSlicer project or G-code is needed to confirm the actual layer height and temperatures.
+**How this setup was chosen.** The pinned Voron profile [1] supplies the 0.4 mm nozzle option, 0.15 mm layers, 0.20 mm first layer, three perimeters, and seven top / six bottom layers. Setting the PLA top layers to zero is a proposed way to reproduce the exposed triangular infill seen in the photographs. The PLA speed cap is a conservative project choice based on the profile's 40 mm/s external-perimeter speed, rather than its faster internal-perimeter and infill settings. The TPU infill, walls, and solid layers are trial values: on a small spring, solid shells may occupy much of the section, so check the sliced toolpaths and adjust after a flex test.
+
+**Material-specific tuning.** The TPU temperature range above belongs to Prusament TPU 95A and is a reference for the selected hardness, not identification of the original spool. Follow the actual filament manufacturer's range and tune on the available Voron. Prusa's flexible-material guide recommends about 20 mm/s [4]. For Prusament TPU 95A on smooth PEI, its guide calls for a glue-stick separation layer [3].
+
+**Suggested fabrication workflow.** For the hand-assembled version allowed by the brief, prepare the rigid pieces and spring as separate material jobs, check their mating features in the slicer, then trial-fit the cooled parts. The proposed flat orientations and support choices need checking against the actual geometry. Verify the 35 mm jaw dimension after import, test one connection before printing the full set, and save the final SuperSlicer project and G-code with the results.
+
+### Print-setting sources
+
+1. [Voron profile library, pinned revision](https://github.com/slic3r/slic3r-profiles/blob/ca25c7ec55dcc6073da61e39692c321cdb6497dc/Voron.ini): the `0.4nozzle`, `0.15mm`, and common print sections supply the geometry settings and reference perimeter speed.
+2. [Prusa PLA material guide](https://help.prusa3d.com/article/pla_2062): PLA nozzle and bed temperatures.
+3. [Prusament TPU 95A material guide](https://help.prusa3d.com/article/prusament-tpu-95a-material-guide_899653): material-specific temperature ranges and build-surface preparation.
+4. [Prusa flexible-material guide](https://help.prusa3d.com/article/flexible-materials_2057): slow extrusion for flexible filament.
 
 ## A closer look {#gallery}
 
