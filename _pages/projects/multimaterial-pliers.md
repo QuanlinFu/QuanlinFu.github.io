@@ -15,7 +15,7 @@ header:
 <p class="project-back"><a href="{{ '/portfolio/' | relative_url }}">← Back to portfolio</a></p>
 
 <div class="project-hero">
-  <img src="{{ '/assets/projects/multimaterial-pliers/pliers-overview.jpg' | relative_url }}" alt="Black printed pliers with open lattice handles and a pale central element on a tabletop" width="1800" height="1350" fetchpriority="high">
+  <img src="{{ '/assets/projects/multimaterial-pliers/pliers-overview.jpg' | relative_url }}" alt="Black printed pliers with open lattice handles and a pale central element on a tabletop" width="2400" height="1800" fetchpriority="high">
   <div>
     <p class="portfolio-kicker">CHBE 4200 · GitHub Project 02</p>
     <h2>A little flex.<br>A useful grip.</h2>
@@ -131,17 +131,22 @@ The 35 mm jaw length and 20 mm maximum opening are the dimensions reported for t
 ## A closer look {#gallery}
 
 <div class="pliers-gallery">
-  <figure><a href="{{ '/assets/projects/multimaterial-pliers/pliers-overview.jpg' | relative_url }}"><img src="{{ '/assets/projects/multimaterial-pliers/pliers-overview.jpg' | relative_url }}" alt="Overview of the pliers, with narrow jaws at left and wide handles at right" width="1800" height="1350" loading="lazy"></a><figcaption><strong>01 / Overall form.</strong> Long handles and narrow jaws arranged around the center.</figcaption></figure>
-  <figure><a href="{{ '/assets/projects/multimaterial-pliers/pliers-joint.jpg' | relative_url }}"><img src="{{ '/assets/projects/multimaterial-pliers/pliers-joint.jpg' | relative_url }}" alt="Alternate view showing the circular white TPU center between the black handles and jaws" width="1800" height="1350" loading="lazy"></a><figcaption><strong>02 / Circular spring.</strong> The TPU center and its interfaces with the black components.</figcaption></figure>
-  <figure><a href="{{ '/assets/projects/multimaterial-pliers/pliers-handles.jpg' | relative_url }}"><img src="{{ '/assets/projects/multimaterial-pliers/pliers-handles.jpg' | relative_url }}" alt="View along the black handles toward the central element and jaws, showing exposed triangular infill" width="1800" height="1350" loading="lazy"></a><figcaption><strong>03 / Handle structure.</strong> Exposed triangular infill across the upper faces.</figcaption></figure>
+  <figure><a href="{{ '/assets/projects/multimaterial-pliers/pliers-overview.jpg' | relative_url }}"><img src="{{ '/assets/projects/multimaterial-pliers/pliers-overview.jpg' | relative_url }}" alt="Overview of the pliers, with narrow jaws at left and wide handles at right" width="2400" height="1800" loading="lazy"></a><figcaption><strong>01 / Overall form.</strong> Long handles and narrow jaws arranged around the center.</figcaption></figure>
+  <figure><a href="{{ '/assets/projects/multimaterial-pliers/pliers-joint.jpg' | relative_url }}"><img src="{{ '/assets/projects/multimaterial-pliers/pliers-joint.jpg' | relative_url }}" alt="Alternate view showing the circular white TPU center between the black handles and jaws" width="2400" height="1800" loading="lazy"></a><figcaption><strong>02 / Circular spring.</strong> The TPU center and its interfaces with the black components.</figcaption></figure>
+  <figure><a href="{{ '/assets/projects/multimaterial-pliers/pliers-handles.jpg' | relative_url }}"><img src="{{ '/assets/projects/multimaterial-pliers/pliers-handles.jpg' | relative_url }}" alt="View along the black handles toward the central element and jaws, showing exposed triangular infill" width="2400" height="1800" loading="lazy"></a><figcaption><strong>03 / Handle structure.</strong> Exposed triangular infill across the upper faces.</figcaption></figure>
 </div>
 
-All three images document the same supplied prototype from different angles. Earlier iteration photographs can be added when their sequence and design changes are known.
+Three views of the completed prototype show the overall form, circular TPU spring, and exposed triangular infill.
 
 ## Does it grip and spring back? {#testing}
 
-<div class="pliers-test-note"><p class="portfolio-kicker">Working demonstration · pending</p><h3>The next piece of evidence is motion.</h3><p>A short recording should show the handles being squeezed, the jaws picking up a through-hole resistor, and the pliers reopening after release. The resulting GIF will document actual operation here.</p></div>
+<div class="pliers-test-note"><p class="portfolio-kicker">Working demonstration</p><h3>From handle motion to jaw movement.</h3><p>Two recordings show the physical prototype being squeezed and released. The close-up focuses on the jaws and circular TPU center; the wider view shows the handles and jaws moving together.</p></div>
 
-A useful test separates three questions: can the jaws reach and hold the resistor, does the central element recover after release, and do the connections remain secure through repeated cycles? My functional check confirms resistor pickup and automatic reopening. A recording will provide visible evidence of those actions, while repeated-cycle testing remains a next step. No quantified success rate, load capacity, or cycle life is claimed. A rotating CAD model or a slideshow of still photographs would show appearance, but would not replace the required demonstration of the physical pliers working.
+<div class="pliers-gallery pliers-demos">
+  <figure><a href="{{ '/assets/projects/multimaterial-pliers/pliers-spring-action.gif' | relative_url }}"><img src="{{ '/assets/projects/multimaterial-pliers/pliers-spring-action.gif' | relative_url }}" alt="Looping close-up of the pliers opening and closing around the white TPU center" width="360" height="640" loading="lazy" decoding="async"></a><figcaption><strong>01 / Jaw and spring motion.</strong> A close-up of the jaws and circular TPU center during opening and closing.</figcaption></figure>
+  <figure><a href="{{ '/assets/projects/multimaterial-pliers/pliers-handle-action.gif' | relative_url }}"><img src="{{ '/assets/projects/multimaterial-pliers/pliers-handle-action.gif' | relative_url }}" alt="Looping demonstration of a hand squeezing and releasing the pliers handles to move the jaws" width="360" height="640" loading="lazy" decoding="async"></a><figcaption><strong>02 / Handle operation.</strong> Squeezing and releasing the broad handles moves the narrow jaws.</figcaption></figure>
+</div>
+
+Resistor pickup and automatic reopening were confirmed in my functional check; these clips focus on the opening and closing motion. Repeated-cycle durability remains a next step. No quantified success rate, load capacity, or cycle life is claimed.
 
 </div>
