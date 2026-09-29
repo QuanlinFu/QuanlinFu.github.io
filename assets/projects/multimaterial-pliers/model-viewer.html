@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Multi-material pliers — interactive STL preview</title>
+  <style>
+    :root { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #253a38; background: #f5f8f7; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    .viewer { position: relative; display: flex; flex-direction: column; min-height: 400px; height: 100vh; overflow: hidden; }
+    header { display: flex; gap: 12px; align-items: center; justify-content: space-between; padding: 17px 20px 5px; }
+    h1 { margin: 0; font-size: 14px; font-weight: 650; letter-spacing: .02em; }
+    .tag { color: #426c65; font-size: 11px; text-transform: uppercase; letter-spacing: .09em; }
+    .stage { position: relative; flex: 1; min-height: 220px; }
+    canvas { display: block; width: 100%; height: 100%; position: absolute; inset: 0; touch-action: none; cursor: grab; }
+    canvas.dragging { cursor: grabbing; }
+    canvas:focus-visible { outline: 3px solid #007f78; outline-offset: -5px; border-radius: 8px; }
+    .status { position: absolute; inset: 0; display: grid; place-content: center; padding: 25px; text-align: center; pointer-events: none; font-size: 14px; line-height: 1.6; }
+    .status[hidden] { display: none; }
+    .controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 7px; padding: 6px 14px; }
+    button, .download { min-height: 44px; border: 1px solid #c9dad5; border-radius: 8px; padding: 9px 13px; background: #fff; color: #205a53; font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-flex; justify-content: center; align-items: center; }
+    button.icon { min-width: 44px; font-size: 19px; padding: 5px 10px; }
+    button:hover, .download:hover { background: #e6f2ee; border-color: #007f78; }
+    button:focus-visible, a:focus-visible { outline: 3px solid #007f78; outline-offset: 3px; }
+    button:disabled { opacity: .42; cursor: default; }
+    .download { background: #007f78; color: #fff; border-color: #007f78; }
+    .download:hover { background: #00635d; color: #fff; }
+    footer { text-align: center; padding: 5px 16px 14px; }
+    .help, .note { margin: 4px 0 0; font-size: 11px; line-height: 1.5; color: #536d67; }
+    .note { color: #687a75; }
+    @media (max-width: 430px) {
+      header { padding: 14px 14px 4px; }
+      .tag { font-size: 10px; }
+      .controls { gap: 5px; padding-inline: 8px; }
+      button, .download { padding-inline: 9px; }
+      button.icon { min-width: 40px; }
+      .help { max-width: 300px; margin-inline: auto; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <main class="viewer" aria-label="STL model viewer">
+    <header><h1>Explore the model</h1><span class="tag">Original STL geometry</span></header>
+    <div class="stage">
+      <canvas id="model" tabindex="0" role="application" aria-label="Interactive 3D model of the multi-material pliers. Use arrow keys to rotate, plus and minus to zoom, R to reset, and T for top view." aria-describedby="help model-note"></canvas>
+      <div id="status" class="status" role="status" aria-live="polite">Loading the model…</div>
+    </div>
+    <nav class="controls" aria-label="Model view controls">
+      <button class="icon" data-action="left" aria-label="Rotate model left" title="Rotate left" disabled>↶</button>
+      <button class="icon" data-action="right" aria-label="Rotate model right" title="Rotate right" disabled>↷</button>
+      <button class="icon" data-action="in" aria-label="Zoom in" title="Zoom in" disabled>+</button>
+      <button class="icon" data-action="out" aria-label="Zoom out" title="Zoom out" disabled>−</button>
+      <button data-action="top" disabled>Top view</button>
+      <button data-action="reset" disabled>Reset</button>
+      <a class="download" href="multimaterial_final.stl" download>Download STL</a>
+    </nav>
+    <footer>
+      <p class="help" id="help">Drag to rotate · Pinch to zoom · Select the model, then scroll to zoom<br>Keyboard: arrow keys rotate · + / − zoom · R resets · T shows top view</p>
+      <p class="note" id="model-note">Source mesh layout; a single preview color does not indicate material assignments.</p>
+    </footer>
+  </main>
+  <script src="model-viewer.js" defer></script>
+</body>
+</html>
