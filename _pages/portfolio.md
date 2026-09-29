@@ -21,6 +21,17 @@ classes: wide
 ## Projects {#projects}
 
 <div class="portfolio-grid">
+  <a class="portfolio-card portfolio-card--link" href="{{ '/projects/multimaterial-pliers/' | relative_url }}">
+    <img src="{{ '/assets/projects/multimaterial-pliers/pliers-overview.jpg' | relative_url }}" alt="Multi-material pliers with black lattice handles and a pale central element" loading="lazy">
+    <p class="portfolio-card__number">05 · CHBE 4200</p>
+    <h3>Multi-Material Pliers</h3>
+    <p>Exploring rigid printed structures and a compliant spring for gripping small electronic components. Includes an interactive 3D model.</p>
+    <ul class="portfolio-tags" aria-label="Project skills">
+      <li>3D Printing</li><li>Compliant Mechanisms</li><li>CAD</li>
+    </ul>
+    <span class="portfolio-card__cta">View project <span aria-hidden="true">→</span></span>
+  </a>
+
   <a class="portfolio-card portfolio-card--link" href="{{ '/projects/electric-vehicle/' | relative_url }}">
     <img src="{{ '/assets/projects/electric-vehicle-prototype.png' | relative_url }}" alt="Hand-sized electric vehicle prototype with a laser-cut chassis" loading="lazy">
     <p class="portfolio-card__number">01</p>
