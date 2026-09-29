@@ -101,7 +101,7 @@ The 35 mm jaw length and 20 mm maximum opening are the dimensions reported for t
 
 ### Reference settings for a repeat print
 
-<aside class="pliers-note"><strong>Researched starting settings.</strong> The values below form a proposed setup for a new print. They combine the linked Voron profile and manufacturer guidance with the design choices described below; they are not a recovered log of the original build or a tested reproduction profile.</aside>
+<aside class="pliers-note"><strong>Researched starting settings.</strong> The values below form a proposed setup for a new print. Tune them for the selected filament and printer; they are not a recovered log of the original build or a tested reproduction profile.</aside>
 
 <div class="pliers-table-wrap" tabindex="0" role="region" aria-label="Reference print settings for PLA and TPU 95A" markdown="1">
 
@@ -110,30 +110,23 @@ The 35 mm jaw length and 20 mm maximum opening are the dimensions reported for t
 | Material | Black PLA | White TPU 95A; use the chosen brand's filament profile |
 | Printer / slicer | Voron / SuperSlicer | Voron / SuperSlicer |
 | Nozzle diameter | 0.4 mm reference nozzle | 0.4 mm reference nozzle |
-| Layer height | 0.15 mm; 0.20 mm first layer [1] | 0.15 mm; 0.20 mm first layer, adopted as a starting geometry setting [1] |
-| Nozzle temperature | 215 °C first layer; 210 °C thereafter [2] | Start at 230 °C; Prusament TPU 95A lists 220–240 °C [3] |
-| Bed temperature | 60 °C [2] | Start at 60 °C; Prusament TPU 95A lists 55–75 °C [3] |
+| Layer height | 0.15 mm; 0.20 mm first layer | 0.15 mm; 0.20 mm first layer, adopted as a starting geometry setting |
+| Nozzle temperature | 215 °C first layer; 210 °C thereafter | Start at 230 °C; Prusament TPU 95A lists 220–240 °C |
+| Bed temperature | 60 °C | Start at 60 °C; Prusament TPU 95A lists 55–75 °C |
 | Infill | 31%, triangles, following the project record and visible pattern | 31%, triangles, proposed for the first trial; tune for spring response |
-| Walls / perimeters | 3 [1] | 3 as an initial trial [1] |
-| Top / bottom solid layers | 0 top / 6 bottom for the exposed-infill variant | 7 top / 6 bottom as an initial trial [1] |
-| Print speed | Proposed cap of 40 mm/s for perimeters and infill; 20 mm/s first layer | Start at 20 mm/s, including the first layer [4] |
+| Walls / perimeters | 3 | 3 as an initial trial |
+| Top / bottom solid layers | 0 top / 6 bottom for the exposed-infill variant | 7 top / 6 bottom as an initial trial |
+| Print speed | Proposed cap of 40 mm/s for perimeters and infill; 20 mm/s first layer | Start at 20 mm/s, including the first layer |
 | Supports | Start disabled; inspect every layer around the interlocks before printing | Start disabled; inspect the spring and connection features before printing |
 | Orientation | Proposed: broad handle and jaw faces flat on the bed | Proposed: circular spring plane parallel to the bed |
 
 </div>
 
-**How this setup was chosen.** The pinned Voron profile [1] supplies the 0.4 mm nozzle option, 0.15 mm layers, 0.20 mm first layer, three perimeters, and seven top / six bottom layers. Setting the PLA top layers to zero is a proposed way to reproduce the exposed triangular infill seen in the photographs. The PLA speed cap is a conservative project choice based on the profile's 40 mm/s external-perimeter speed, rather than its faster internal-perimeter and infill settings. The TPU infill, walls, and solid layers are trial values: on a small spring, solid shells may occupy much of the section, so check the sliced toolpaths and adjust after a flex test.
+**How this setup was chosen.** The pinned Voron profile supplies the 0.4 mm nozzle option, 0.15 mm layers, 0.20 mm first layer, three perimeters, and seven top / six bottom layers. Setting the PLA top layers to zero is a proposed way to reproduce the exposed triangular infill seen in the photographs. The PLA speed cap is a conservative project choice based on the profile's 40 mm/s external-perimeter speed, rather than its faster internal-perimeter and infill settings. The TPU infill, walls, and solid layers are trial values: on a small spring, solid shells may occupy much of the section, so check the sliced toolpaths and adjust after a flex test.
 
-**Material-specific tuning.** The TPU temperature range above belongs to Prusament TPU 95A and is a reference for the selected hardness, not identification of the original spool. Follow the actual filament manufacturer's range and tune on the available Voron. Prusa's flexible-material guide recommends about 20 mm/s [4]. For Prusament TPU 95A on smooth PEI, its guide calls for a glue-stick separation layer [3].
+**Material-specific tuning.** The TPU temperature range above belongs to Prusament TPU 95A and is a reference for the selected hardness, not identification of the original spool. Follow the actual filament manufacturer's range and tune on the available Voron. Prusa's flexible-material guide recommends about 20 mm/s. For Prusament TPU 95A on smooth PEI, its guide calls for a glue-stick separation layer.
 
 **Suggested fabrication workflow.** For the hand-assembled version allowed by the brief, prepare the rigid pieces and spring as separate material jobs, check their mating features in the slicer, then trial-fit the cooled parts. The proposed flat orientations and support choices need checking against the actual geometry. Verify the 35 mm jaw dimension after import, test one connection before printing the full set, and save the final SuperSlicer project and G-code with the results.
-
-### Print-setting sources
-
-1. [Voron profile library, pinned revision](https://github.com/slic3r/slic3r-profiles/blob/ca25c7ec55dcc6073da61e39692c321cdb6497dc/Voron.ini): the `0.4nozzle`, `0.15mm`, and common print sections supply the geometry settings and reference perimeter speed.
-2. [Prusa PLA material guide](https://help.prusa3d.com/article/pla_2062): PLA nozzle and bed temperatures.
-3. [Prusament TPU 95A material guide](https://help.prusa3d.com/article/prusament-tpu-95a-material-guide_899653): material-specific temperature ranges and build-surface preparation.
-4. [Prusa flexible-material guide](https://help.prusa3d.com/article/flexible-materials_2057): slow extrusion for flexible filament.
 
 ## A closer look {#gallery}
 
